@@ -24,4 +24,24 @@ public class JedisTest extends BaseTest {
 
         System.out.println(jedis.get("testsss"));
     }
+
+    @Test
+    public void testSub() throws Exception{
+        JedisListener listener = new JedisListener();
+        Jedis jedis = jedisPool.getResource();
+        jedis.subscribe(listener,"channel");
+
+    }
+
+    @Test
+    public void testPub(){
+        Jedis jedis = jedisPool.getResource();
+        jedis.publish("channel","123");
+        System.out.println("发送消息完成");
+    }
+
+    @Test
+    public void test1(){
+
+    }
 }
