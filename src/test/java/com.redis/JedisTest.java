@@ -40,8 +40,5 @@ public class JedisTest extends BaseTest {
         System.out.println("发送消息完成");
     }
 
-    @Test
-    public void test1(){
 
-    }
 }
